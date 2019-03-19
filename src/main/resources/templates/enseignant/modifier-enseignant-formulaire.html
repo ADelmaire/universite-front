@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>modification</title>
+<link rel="stylesheet"
+	th:href="@{css/enseignant/ajouter-enseignant-formulaire.css}" />
+</head>
+<body>
+
+
+<div id="conteneur">
+
+		<form id="formulaire" th:action="@{valider-modification-enseignant}" method="post"
+			th:object="${ens}">
+
+			<fieldset>
+				<legend>Modifier une fiche enseignant</legend>
+				
+				<input class="cadre" hidden="hidden" type="number" id="id" name="id" th:value="${ens.id}" th:field="*{id}" />
+
+				<label for="F" class="mm">Madame</label>
+				<input type="radio" id="F" name="F" value="F" th:field="*{sexe}" checked="checked"/>
+				
+				<label for="M" class="mm">Monsieur</label>
+				<input type="radio" id="M" name="M" value="M" th:field="*{sexe}" />
+					
+				<label for="nom">Nom:</label>
+				<input class="cadre" type="text" id="nom" name="nom" th:value="${ens.nom}" th:field="*{nom}" />
+				
+				<label for="prenom">Prenom:</label>
+				<input class="cadre" type="text" id="prenom" name="prenom" th:value="${ens.prenom}" th:field="*{prenom}" />
+				
+				<label for="numero">Numero:</label>
+				<input class="cadre" type="number" id="numero" name="numero" th:value="${ens.numero}" th:field="*{numero}" />
+				
+				<label for="dateNaissance">Date de naissance:</label>
+				<input class="cadre" type="date" id="dateNaissance" name="dateNaissance" th:value="${ens.dateNaissance}" th:field="*{dateNaissance}" />
+				
+				<label for="grade">Grade:</label>
+				<select class="cadre" id="grade" name="grade" th:value="${ens.grade}" th:field="*{grade}">
+					<option value="PR">PR</option>
+					<option value="MCF">MCF</option>
+					<option value="ASS">ASS</option>
+				</select>
+				
+				<label for="dateEmbauche">Date d'embauche:</label>
+				<input class="cadre" type="date" id="dateEmbauche" name="dateEmbauche" th:value="${ens.dateEmbauche}" th:field="*{dateEmbauche}" />
+				
+				<label for="photo">Photo:</label>
+				<input class="cadre" type="text" id="photo" name="photo" th:value="${ens.photo}" th:field="*{photo}" />
+
+				<input class="sub" type="button" value="Valider"
+					onclick="validerLeFormulaire();"/>
+
+			</fieldset>
+
+		</form>
+
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		th:src="@{js/enseignant/validation-enseignant.js}"></script>
+</body>
+</html>

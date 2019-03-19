@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>infos etudiant</title>
+<link rel="stylesheet" th:href="@{css/etudiant/infos-etudiant.css}"/>
+</head>
+<body>
+<div id="bloc">
+		<div id="blocIndiv">
+			<h3><p th:text="${etudiant.nom}"></p></h3>
+			<h3><p th:text="${etudiant.prenom}"></p></h3>
+
+			<ul>
+				<li th:text="${etudiant.numero}"></li>
+				<li th:text="${#dates.format(etudiant.dateNaissance, 'yyyy/MM/dd')}"></li>
+				<li th:text="${etudiant.sexe}"></li>
+			</ul>
+			<div>
+				<img th:src="${etudiant.photo}" alt="photo de l'etudiant"/>
+			</div>
+		</div>
+		<div id="modsup">
+		<a th:href="@{modifier-etudiant(id=${etudiant.id})}">Modifier</a> 
+		<a th:href="@{supprimer(id=${etudiant.id})}">Supprimer</a>
+		</div>
+	</div>
+
+</body>
+</html>

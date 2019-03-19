@@ -1,0 +1,29 @@
+@charset "UTF-8";
+h1 {	
+	margin-bottom: 30px;
+	text-align: center;
+	font-family: sans-serif;
+	background-color: #f3f8f1;
+	color: #4f0000;
+}
+#conteneur {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #e6f2f0;
+	width: 1190px;
+	margin: auto;
+}
+.element {
+	text-align: center;
+	border: 3px solid #e7e2e3;
+	width: 350px;
+	background-color: #f3f8f1;
+	margin: 20px;
+}
+img{
+	height: 100px;
+}
+
+h2{
+	text-align:center;
+}

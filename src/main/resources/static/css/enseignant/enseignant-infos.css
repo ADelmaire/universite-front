@@ -1,0 +1,30 @@
+@charset "UTF-8";
+#bloc {
+	padding: 20px;
+	background-color: #e6f2f0;
+	width: 500px;
+	margin: auto;
+	color: #116850;
+}
+
+#blocIndiv {
+	padding: 5px;
+	border: 3px solid #e7e2e3;
+	width: 400px;
+	display: inline-block;
+	background-color: #f3f8f1;
+	margin: 50px;
+	color: #012c6b;
+	font-size: 20px;
+	font-family: monospace;
+}
+
+img{
+	width:195px;
+	margin-left: 80px;
+}
+
+#modsup{
+	display: block;
+	text-align: center;
+}

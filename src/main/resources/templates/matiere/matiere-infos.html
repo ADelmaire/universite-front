@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1 th:text="${matiere.nom}"></h1>
+	<ul>
+		<li th:text="${matiere.numero}"></li>
+		<li th:text="${matiere.coef}"></li>
+		<li th:text="${matiere.enseignant.nom + ' ' + matiere.enseignant.prenom}"></li>
+		<li>
+			<span  th:text="${matiere.enseignant.nom}"></span> 
+			<span  th:text="${matiere.enseignant.prenom}"></span>
+		</li>
+	</ul>
+	
+	<h1> <a th:href="@{modifier-matiere(id=${matiere.id})}">Modifier la matière</a></h1>
+</body>
+</html>

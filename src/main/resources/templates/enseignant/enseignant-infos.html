@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Infos enseignant</title>
+<link rel="stylesheet" th:href="@{css/enseignant/enseignant-infos.css}" />
+</head>
+<body>
+
+	<div id="bloc">
+		<div id="blocIndiv">
+			<h3><p th:text="${enseignant.nom}"></p></h3>
+			<h3><p th:text="${enseignant.prenom}"></p></h3>
+
+			<ul>
+				<li th:text="${enseignant.numero}"></li>
+				<li th:text="${#dates.format(enseignant.dateNaissance, 'yyyy/MM/dd')}"></li>
+				<li th:text="${enseignant.grade}"></li>
+				<li th:text="${#dates.format(enseignant.dateEmbauche, 'yyyy/MM/dd')}"></li>
+				<li th:text="${enseignant.sexe}"></li>
+			</ul>
+			<div>
+				<img th:src="${enseignant.photo}" alt="photo de l'enseignant" />
+			</div>
+		</div>
+		<div id="modsup">
+		<a th:href="@{modifier-enseignant(id=${enseignant.id})}">Modifier</a> 
+		<a th:href="@{supprimer(id=${enseignant.id})}">Supprimer</a>
+		</div>
+	</div>
+
+</body>
+</html>

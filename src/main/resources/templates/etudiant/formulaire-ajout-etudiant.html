@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{css/etudiant/formulaire-etudiant.css}"/>
+</head>
+<body>
+
+<div id="conteneur">
+
+		<form id="formulaire" th:action="@{valider-etudiant}" method="post"
+			th:object="${e}">
+
+			<fieldset>
+				<legend>Ajouter un étudiant</legend>
+
+				<label for="sexe" class="mm">Madame</label>
+				<input type="radio" id="Mme" name="sexe" value="F" th:field="*{sexe}"/>
+				
+				<label for="sexe" class="mm">Monsieur</label>
+				<input type="radio" id="Mr" name="sexe" value="M" th:field="*{sexe}"/>
+					
+				<label for="nom">Nom:</label>
+				<input class="cadre" type="text" id="nom" name="nom" th:value="${e.nom}" th:field="*{nom}" />
+				
+				<label for="prenom">Prenom:</label>
+				<input class="cadre" type="text" id="prenom" name="prenom" th:value="${e.prenom}" th:field="*{prenom}" />
+				
+				<label for="numero">Numero:</label>
+				<input class="cadre" type="number" id="numero" name="numero" th:value="${e.numero}" th:field="*{numero}" />
+				
+				<label for="dateNaissance">Date de naissance:</label>
+				<input class="cadre" type="date" id="dateNaissance" name="dateNaissance" th:value="${e.dateNaissance}" th:field="*{dateNaissance}" />
+				
+				<label for="photo">Photo:</label>
+				<input class="cadre" type="text" id="photo" name="photo" th:value="${e.photo}" th:field="*{photo}" />
+				<br/>
+				<input class="sub" type="button" value="Valider"
+					onclick="validerLeFormulaire();"/>
+
+			</fieldset>
+
+		</form>
+
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		th:src="@{js/etudiant/validation-etudiant.js}"></script>
+
+</body>
+</html>
