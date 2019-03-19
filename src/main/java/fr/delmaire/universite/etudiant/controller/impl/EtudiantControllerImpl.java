@@ -75,7 +75,7 @@ public class EtudiantControllerImpl implements IEtudiantController{
 	}
 
 	@Override
-	@PostMapping("/valider-etudiant")
+	@PostMapping("/valider-modif-etudiant")
 	public String valilderModificationEtudiant(Model model, @ModelAttribute Etudiant e) {
 		es.sauvegarderModif(e);
 		return "redirect:/etudiants";
