@@ -15,5 +15,7 @@ public interface IEnseignantRepository {
 	Enseignant save(Enseignant enseignant);
 	
 	public void update(Enseignant enseignant, Integer id);
+	
+	public List<Enseignant> getEnseignants (String s);
 
 }

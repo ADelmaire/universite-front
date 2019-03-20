@@ -57,4 +57,15 @@ public class EnseignantRepositoryImpl implements IEnseignantRepository{
 				Enseignant.class);
 	}
 
+	@Override
+	public List<Enseignant> getEnseignants(String s) {
+		List<Enseignant> liste = rt.exchange(
+				"http://localhost:8080/enseignants/search/" + s, 
+				HttpMethod.GET,
+				null, 
+				new ParameterizedTypeReference <List<Enseignant>> (){})
+				.getBody();
+		return liste;
+	}
+
 }

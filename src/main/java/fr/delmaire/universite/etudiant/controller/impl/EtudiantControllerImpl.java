@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.delmaire.universite.etudiant.controller.IEtudiantController;
@@ -76,7 +77,7 @@ public class EtudiantControllerImpl implements IEtudiantController{
 
 	@Override
 	@PostMapping("/valider-modif-etudiant")
-	public String valilderModificationEtudiant(Model model, @ModelAttribute Etudiant e) {
+	public String valilderModificationEtudiant(Model model, @ModelAttribute("e") Etudiant e) {
 		es.sauvegarderModif(e);
 		return "redirect:/etudiants";
 	}

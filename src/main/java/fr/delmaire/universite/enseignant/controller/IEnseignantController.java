@@ -20,4 +20,5 @@ public interface IEnseignantController {
 	
 	public String valilderModificationEnseignant (Model model, Enseignant e);
 	
+	public String chercherLesEnseignants (Model model, String nom);
 }

@@ -86,13 +86,21 @@ public class EnseignantControllerImpl implements IEnseignantController{
 
 	@Override
 	@PostMapping("/valider-modification-enseignant")
-	public String valilderModificationEnseignant(Model model, @ModelAttribute Enseignant ens) {
+	public String valilderModificationEnseignant(Model model, @ModelAttribute("ens") Enseignant ens) {
 		enseignantService.sauvegarderModif(ens);
 		if(ens == null) {
 			return "redirect:/modifier-enseignant";
 		}else {
 		return "redirect:/enseignants";
 		}
+	}
+
+	@Override
+	@GetMapping("/enseignants/search")
+	public String chercherLesEnseignants(Model model, @RequestParam("nom") String nom) {
+		List<Enseignant> liste = enseignantService.getEnseignants(nom);
+		model.addAttribute("enseignants", liste);
+		return "enseignant/enseignants";
 	}
 
 }
